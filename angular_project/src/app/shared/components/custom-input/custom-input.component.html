@@ -1,0 +1,17 @@
+<mat-form-field class="w-100" [appearance]="field?.appearance?field.appearance:'standard'">
+  <ng-container *ngFor="let item of field">
+  <mat-label>{{item.label}}</mat-label>
+    <input
+    [type]="item.type"
+    matInput
+    [formControlName]="item.name"
+    [placeholder]="item.placeholder?item.label:''"
+  />
+  </ng-container>
+  <mat-hint>Errors appear instantly!</mat-hint>
+  <ng-container *ngFor="let validation of field?.validations">
+    <mat-error *ngIf="formGroup.get(field.name)?.hasError(validation.name)">
+      Email is <strong>required</strong>
+    </mat-error>
+  </ng-container>
+</mat-form-field>

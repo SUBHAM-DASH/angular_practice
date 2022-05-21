@@ -1,0 +1,11 @@
+<div class="container" style="width: 400px;margin-top: 50px;">
+  <form [formGroup]="formgroup" (ngSubmit)="getValue()">
+    <input type="text" formControlName="firstname" class="form-control" placeholder="firstname">
+    <br><br>
+    <input type="text" formControlName="lastname" class="form-control" placeholder="lastname">
+    <br><br>
+    <input type="email" formControlName="email" class="form-control" placeholder="email">
+    <br><br>
+    <button type="submit"  class="btn btn-primary" >click</button>
+  </form>
+</div>

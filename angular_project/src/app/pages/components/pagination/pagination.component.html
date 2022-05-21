@@ -1,0 +1,11 @@
+<div *ngFor="let d of data | paginate: { itemsPerPage: 4, currentPage: p }">
+  <p>{{ d.userId }}</p>
+  <p>{{ d.id }}</p>
+  <p>"userId"</p>
+  <p>"id"</p>
+  <p>"title"={{ d.title }}</p>
+  <p>"completed"={{ d.completed }}</p>
+  <hr />
+</div>
+<pagination-controls (pageChange)="p = $event" class="float-right">
+</pagination-controls>

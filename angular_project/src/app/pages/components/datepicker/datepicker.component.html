@@ -1,0 +1,13 @@
+<div class="container">
+  <form class="container">
+    <input
+      #box
+      autocomplete="off"
+      class="form-control"
+      name="date"
+      bsDatepicker
+      [bsConfig]="{ minMode:'year', adaptivePosition: true, dateInputFormat: 'YYYY' }"
+    />
+    <button class="btn btn-primary" (click)="getValue(box.value)">Click</button>
+  </form>
+</div>

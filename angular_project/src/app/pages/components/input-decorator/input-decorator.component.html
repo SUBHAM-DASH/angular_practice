@@ -1,0 +1,33 @@
+<div class="container my-5">
+  <div class="row">
+    <form [formGroup]="formGroup" (ngSubmit)="getData()">
+      <div class="col-md-3">
+        <div class="card" style="width: 18rem">
+          <div class="card-body">
+            <app-custom-input [field]="field"></app-custom-input>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary" type="submit">click</button>
+    </form>
+    <!-- <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <app-custom-input [field]="input"></app-custom-input>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- <div class="col-md-3">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <app-custom-input [field]="input"></app-custom-input>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

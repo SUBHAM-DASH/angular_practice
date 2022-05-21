@@ -1,0 +1,5 @@
+<div class="container">
+  <input type="text" name="name" [(ngModel)]="inputProperty">
+  <button (click)="getChanges()">click</button>
+  <app-ng-onchanges *ngIf="val" [data]="inputProperty" [val]="val"></app-ng-onchanges>
+</div>

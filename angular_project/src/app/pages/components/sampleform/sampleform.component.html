@@ -1,8 +1,56 @@
-<div class="container w-50 mt-5" >
-  <form >
-    <app-custom-card [refdata]="content"></app-custom-card>
-    <ng-template #content>
-      <app-custom-input [field]="formField"></app-custom-input>
-    </ng-template>
-  </form>
+<div class="container my-4 w-50">
+  <mat-tab-group mat-align-tabs="start">
+    <mat-tab label="Sample Form">
+      <form class="example-form" [formGroup]="formGroup" (ngSubmit)="getFormValue()">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Firstname</mat-label>
+          <input type="text" matInput formControlName="firstname" placeholder="firstname">
+          <mat-error *ngIf="formGroup.hasError('first') && !formGroup.hasError('required')">
+            Please enter a valid Firstname
+          </mat-error>
+          <mat-error *ngIf="formGroup.hasError('required')">
+            Firstname is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>LastName</mat-label>
+          <input type="text" matInput formControlName="lastname" placeholder="lastname">
+          <mat-error *ngIf="formGroup.hasError('lastname') && !formGroup.hasError('required')">
+            Please enter a valid Lastname
+          </mat-error>
+          <mat-error *ngIf="formGroup.hasError('required')">
+            Lastname is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email" placeholder="emial@example.com">
+          <mat-error *ngIf="formGroup.hasError('email') && !formGroup.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="formGroup.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" matInput formControlName="password" placeholder="password">
+          <mat-error *ngIf="formGroup.hasError('password') && !formGroup.hasError('required')">
+            Please enter a valid password
+          </mat-error>
+          <mat-error *ngIf="formGroup.hasError('required')">
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        <button class="btn btn-success btn-sm" type="submit" >{{hide?'Save':'Submit'}}</button>
+      </form>
+    </mat-tab>
+    <mat-tab label="Second" [disabled]="disable">
+      <h2>Subham kumar dash</h2>
+      <button class="btn btn-danger" (click)="openDialog()">Edit</button>
+    </mat-tab>
+  </mat-tab-group>
 </div>

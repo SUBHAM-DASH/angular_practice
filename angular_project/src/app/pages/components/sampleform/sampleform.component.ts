@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators } from '@angular/forms';
+import { DailogComponent } from './../dailog/dailog.component';
+import { Component, Input, OnInit, ViewChild, OnChanges, SimpleChanges } from '@angular/core';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { DataserviceService } from '../../dataservice.service';
 
 @Component({
   selector: 'app-sampleform',
@@ -8,29 +11,50 @@ import { FormGroup, Validators } from '@angular/forms';
 })
 export class SampleformComponent implements OnInit {
 
-  formGroup!:FormGroup;
-
-  formField:any[]=[
-    {
-      email:{
-        label:'Email',
-        inputType:'email',
-        placeholder:'Eamil',
-        name:'email',
-        validations:[
-          {
-            name:"required",
-            validator:Validators.required,
-            message:'email is required'
-          }
-        ]
-      }
-    }
-  ]
-
-  constructor() { }
+  formGroup!: FormGroup;
+  disable: boolean = false;
+  @Input() hide: any;
+  @ViewChild(DailogComponent) DailogComponent!: DailogComponent;
+  constructor(
+    private fb: FormBuilder,
+    private _dataService: DataserviceService,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
+    this.formGroup = this.fb.group({
+      email: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+
+    if (this.hide) {
+      this.disable = true;
+      this.formGroup.patchValue({
+        email: 'dashsubham@gmail.com',
+        firstname:'subham',
+        lastname:'dash',
+        password:'1234'
+      })
+    }
+
+  }
+  getFormValue() {
+    console.log(this.formGroup.value);
+    this._dataService.saveUserInfo(this.formGroup.value)
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(DailogComponent, {
+      height: '500px',
+      width: '900px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log(`Dialog result: ${result}`);
+    });
   }
 
 }
+

@@ -30,6 +30,7 @@ import { ChildComponent } from './components/child/child.component';
 import { ParentComponent } from './components/parent/parent.component';
 import { NgOnchangesComponent } from './components/ng-onchanges/ng-onchanges.component';
 import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/parent-ng-on-changes.component';
+import { DailogComponent } from './components/dailog/dailog.component';
 
 
 @NgModule({
@@ -52,6 +53,7 @@ import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/pa
     ParentComponent,
     NgOnchangesComponent,
     ParentNgOnChangesComponent,
+    DailogComponent,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(cors());
 
 // routes
+app.use('/api/userdetails',require('./routes/userdetails'));
 app.use('/api/products',require('./routes/products.router'));
 
 app.listen(port, () => {

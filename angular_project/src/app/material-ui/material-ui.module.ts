@@ -8,8 +8,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatCardModule} from '@angular/material/card';
-import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatCardModule } from '@angular/material/card';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatTabsModule } from '@angular/material/tabs';
+
 // bootstrap
 
 
@@ -22,7 +24,8 @@ const materialUImodule: any = [
   MatFormFieldModule,
   MatInputModule,
   MatCardModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatTabsModule
 
   // bootstrap
 

@@ -12,8 +12,17 @@ import { DataserviceService } from '../../dataservice.service';
 export class SampleformComponent implements OnInit {
 
   formGroup!: FormGroup;
+
+  formTracks!: FormGroup;
+
   disable: boolean = false;
+
   @Input() hide: any;
+
+  array: any = [];
+
+  arr: any = [];
+
   @ViewChild(DailogComponent) DailogComponent!: DailogComponent;
   constructor(
     private fb: FormBuilder,
@@ -26,23 +35,38 @@ export class SampleformComponent implements OnInit {
       email: ['', Validators.required],
       firstname: ['', Validators.required],
       lastname: ['', Validators.required],
-      password: ['', Validators.required]
+      password: ['', Validators.required],
     })
+
+    this.formTracks = this.fb.group({
+      name: ['', Validators.required],
+      role: ['', Validators.required]
+    })
+
 
     if (this.hide) {
       this.disable = true;
       this.formGroup.patchValue({
         email: 'dashsubham@gmail.com',
-        firstname:'subham',
-        lastname:'dash',
-        password:'1234'
+        firstname: 'subham',
+        lastname: 'dash',
+        password: '1234'
       })
     }
-
   }
+
+
   getFormValue() {
+    this.formGroup.value['data']=this.arr;
+    this.array.push(this.formGroup.value);
     console.log(this.formGroup.value);
     this._dataService.saveUserInfo(this.formGroup.value)
+  }
+
+  getValueData() {
+    console.log(this.formTracks.value);
+    this.arr.push(this.formTracks.value);
+    this.formTracks.reset();
   }
 
   openDialog() {

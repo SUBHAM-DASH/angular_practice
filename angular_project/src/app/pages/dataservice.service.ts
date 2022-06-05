@@ -9,7 +9,7 @@ export class DataserviceService {
 
   constructor(private http: HttpClient) { }
   url = 'http://localhost:4000/api/products/searchProduct?name=';
-  url2 = 'http://localhost:4000/api/userdetails/newuserdetails';
+  url2 = 'http://localhost:4000/api/newuserdetails';
 
   saveUserInfo(data: any) {
     const httpOptions = {

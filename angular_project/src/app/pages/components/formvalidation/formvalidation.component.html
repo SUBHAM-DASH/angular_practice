@@ -1,0 +1,19 @@
+<div class="container w-50">
+  <form [formGroup]="formGroup">
+    <label>First Name</label>
+    <input type="text" class="form-control" formControlName="firstname">
+    <br>
+    <label>Last Name</label>
+    <input type="text" class="form-control" formControlName="lastname">
+    <br>
+    <div formGroupName="skill">
+      <label>Skill Name</label>
+      <input type="text" class="form-control" formControlName="skillname">
+      <br>
+      <label>Department Name</label>
+      <input type="text"  class="form-control" formControlName="department">
+      <br>
+    </div>
+    <button class="btn btn-primary" type="submit" (click)="getValue()">submit</button>
+  </form>
+</div>

@@ -31,6 +31,10 @@ import { ParentComponent } from './components/parent/parent.component';
 import { NgOnchangesComponent } from './components/ng-onchanges/ng-onchanges.component';
 import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/parent-ng-on-changes.component';
 import { DailogComponent } from './components/dailog/dailog.component';
+import { FormvalidationComponent } from './components/formvalidation/formvalidation.component';
+import { PiechatComponent } from './components/piechat/piechat.component';
+import { BarchatComponent } from './components/barchat/barchat.component';
+import { TryformComponent } from './components/tryform/tryform.component';
 
 
 @NgModule({
@@ -54,6 +58,10 @@ import { DailogComponent } from './components/dailog/dailog.component';
     NgOnchangesComponent,
     ParentNgOnChangesComponent,
     DailogComponent,
+    FormvalidationComponent,
+    PiechatComponent,
+    BarchatComponent,
+    TryformComponent,
   ],
   imports: [
     CommonModule,

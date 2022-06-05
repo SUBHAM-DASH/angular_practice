@@ -43,7 +43,6 @@ export class SampleformComponent implements OnInit {
       role: ['', Validators.required]
     })
 
-
     if (this.hide) {
       this.disable = true;
       this.formGroup.patchValue({
@@ -60,7 +59,7 @@ export class SampleformComponent implements OnInit {
     this.formGroup.value['data']=this.arr;
     this.array.push(this.formGroup.value);
     console.log(this.formGroup.value);
-    this._dataService.saveUserInfo(this.formGroup.value)
+    this._dataService.saveUserInfo(this.formGroup.value);
   }
 
   getValueData() {

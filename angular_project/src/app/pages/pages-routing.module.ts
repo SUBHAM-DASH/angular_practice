@@ -1,3 +1,4 @@
+import { FormvalidationComponent } from './components/formvalidation/formvalidation.component';
 import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/parent-ng-on-changes.component';
 import { Child2Component } from './components/child2/child2.component';
 import { CommonComponent } from './components/common/common.component';
@@ -16,6 +17,9 @@ import { StylebindingComponent } from './components/stylebinding/stylebinding.co
 import { SampleformComponent } from './components/sampleform/sampleform.component';
 import { FormarrayComponent } from './components/formarray/formarray.component';
 import { ParentComponent } from './components/parent/parent.component';
+import { PiechatComponent } from './components/piechat/piechat.component';
+import { BarchatComponent } from './components/barchat/barchat.component';
+import { TryformComponent } from './components/tryform/tryform.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -33,7 +37,11 @@ const routes: Routes = [
   { path: 'common', component: CommonComponent },
   { path: 'parent', component: ParentComponent },
   { path: 'child2', component: Child2Component },
-  { path: 'parentngchanges', component: ParentNgOnChangesComponent }
+  { path: 'parentngchanges', component: ParentNgOnChangesComponent },
+  { path: 'formvalidation', component: FormvalidationComponent },
+  { path: 'piechat', component: PiechatComponent },
+  { path: 'barchat', component: BarchatComponent },
+  { path: 'tryform', component: TryformComponent }
 ];
 
 @NgModule({

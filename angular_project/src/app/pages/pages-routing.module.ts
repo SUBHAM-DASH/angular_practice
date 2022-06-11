@@ -1,3 +1,5 @@
+import { ImageuploadComponent } from './components/imageupload/imageupload.component';
+import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
 import { FormvalidationComponent } from './components/formvalidation/formvalidation.component';
 import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/parent-ng-on-changes.component';
 import { Child2Component } from './components/child2/child2.component';
@@ -20,6 +22,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { PiechatComponent } from './components/piechat/piechat.component';
 import { BarchatComponent } from './components/barchat/barchat.component';
 import { TryformComponent } from './components/tryform/tryform.component';
+import { TableComponent } from './components/table/table.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -41,7 +44,10 @@ const routes: Routes = [
   { path: 'formvalidation', component: FormvalidationComponent },
   { path: 'piechat', component: PiechatComponent },
   { path: 'barchat', component: BarchatComponent },
-  { path: 'tryform', component: TryformComponent }
+  { path: 'tryform', component: TryformComponent },
+  { path: 'inlineedit', component: InlineeditComponent },
+  { path: 'imageupload', component: ImageuploadComponent },
+  { path: 'table', component: TableComponent }
 ];
 
 @NgModule({

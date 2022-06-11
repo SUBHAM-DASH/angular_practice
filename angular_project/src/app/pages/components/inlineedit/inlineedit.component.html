@@ -1,0 +1,53 @@
+<div class="container">
+  <table class="table table-light table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of finaldata;let i= index">
+        <th scope="row">{{i}} - {{item.isEdit}}</th>
+        <td>
+          <div *ngIf="!item.isEdit">
+            {{item.name}}
+          </div>
+          <div *ngIf="item.isEdit">
+            <input type="text" [(ngModel)]="item.name">
+          </div>
+        </td>
+
+        <td>
+          <div *ngIf="!item.isEdit">
+            {{item.roll}}
+          </div>
+          <div *ngIf="item.isEdit">
+            <input type="text" [(ngModel)]="item.roll">
+          </div>
+        </td>
+
+        <td>
+          <div *ngIf="!item.isEdit">
+            {{item.mobile}}
+          </div>
+          <div *ngIf="item.isEdit">
+            <input type="text" [(ngModel)]="item.mobile">
+          </div>
+        </td>
+
+        <div *ngIf="!item.isEdit">
+          <i class="far fa-edit mx-2" (click)="editForm(item)" style="font-size: 24px"></i>
+          <i class="fa fa-trash-o mx-2" style="font-size: 24px"></i>
+        </div>
+        <div *ngIf="item.isEdit">
+          <i class="fa fa-check-circle-o mx-2"  style="font-size: 24px"></i>
+          <i class="fa fa-times mx-2" style="font-size: 24px" (click)="closeForm(item)"></i>
+        </div>
+      </tr>
+    </tbody>
+  </table>
+</div>

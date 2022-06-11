@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <h3><strong class="my-2">Date</strong></h3>
+      <input type="text" placeholder="search Date ..." name="dateSearch" [(ngModel)]="dateSearch" class="form-control my-2" />
+    </div>
+    <div class="col-md-2">
+      <h3><strong class="my-2">Barcode</strong></h3>
+      <input type="text" placeholder="search barcode ..." name="barcodeSearch" [(ngModel)]="barcodeSearch" class="form-control my-2" />
+    </div>
+    <div class="col-md-2">
+      <h3><strong class="my-2">Album</strong></h3>
+      <input type="text" placeholder="search album ..." name="albumSearch" [(ngModel)]="albumSearch" class="form-control my-2" />
+    </div>
+    <div class="col-md-2">
+      <h3><strong  class="my-2">Artist</strong></h3>
+      <input type="text" placeholder="search artist ..." name="artistSearch" [(ngModel)]="artistSearch" class="form-control my-2" />
+    </div>
+    <div class="col-md-2">
+      <h3><strong class="my-2">Price</strong></h3>
+      <input type="text" placeholder="search price ..." name="price" [(ngModel)]="priceSearch" class="form-control my-2" />
+    </div>
+    <div class="col-md-2">
+      <h3><strong  class="my-2">Action</strong></h3>
+    </div>
+  </div>
+
+  <div *ngFor="let item of dummyData  | filter:albumSearch | filter:barcodeSearch | filter:artistSearch | filter:priceSearch | filter:dateSearch">
+    <div class="row">
+      <div class="col-md-2 my-2">
+        <strong>{{ item.date }}</strong>
+      </div>
+      <div class="col-md-2 my-2">
+        <strong>{{ item.barcode }}</strong>
+      </div>
+      <div class="col-md-2 my-2">
+        <strong>{{ item.album }}</strong>
+      </div>
+      <div class="col-md-2 my-2">
+        <strong>{{ item.artist }}</strong>
+      </div>
+      <div class="col-md-2 my-2">
+        <strong>{{ item.price }}</strong>
+      </div>
+      <div class="col-md-2 my-2">
+        <button class="btn btn-success mx-1" style="width: 80px;">IsFeature</button>
+        <button class="btn btn-primary" style="width: 70px;">Details</button>
+      </div>
+    </div>
+  </div>
+</div>
+

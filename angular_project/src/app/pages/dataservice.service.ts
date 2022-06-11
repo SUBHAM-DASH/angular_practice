@@ -10,6 +10,7 @@ export class DataserviceService {
   constructor(private http: HttpClient) { }
   url = 'http://localhost:4000/api/products/searchProduct?name=';
   url2 = 'http://localhost:4000/api/newuserdetails';
+  url3 = 'http://localhost:9000/api/getDetails';
 
   saveUserInfo(data: any) {
     const httpOptions = {
@@ -23,8 +24,14 @@ export class DataserviceService {
   }
 
 
+  getDetails(){
+    return this.http.get(this.url3);
+  }
+
+
   getSearchdata(data: any) {
-    return this.http.get(this.url + `${data}`);
+    // return this.http.post(this.url + `${data}`);
+    return this.http.post("http://localhost:9000/api/getsearchdetail",data)
   }
 
   getData() {
@@ -36,4 +43,6 @@ export class DataserviceService {
     { name: "kumar", mobile: 79883838333 },
     { name: "raja", mobile: 72863737383 }
   ]
+
+
 }

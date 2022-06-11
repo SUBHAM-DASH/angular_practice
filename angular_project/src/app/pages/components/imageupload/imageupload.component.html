@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <form [formGroup]="formGroup" (ngSubmit)="getData()">
+      <div class="col-md-6">
+        <label><strong>Name</strong>:</label>
+        <input type="text" class="form-control" formControlName="name" placeholder="enter the name...">
+      </div>
+      <div class="col-md-6">
+        <label><strong>email</strong>:</label>
+        <input type="text" class="form-control" formControlName="email" placeholder="enter the email...">
+      </div>
+      <div class="col-md-6">
+        <label><strong>Image</strong>:</label>
+        <input type="file" class="form-control" (change)="handleimageClick($event)" #image>
+      </div>
+      <button class="btn btn-primary my-3">Save</button>
+    </form>
+    <div style="height: 200px;width:200px">
+      <img [src]="" alt="image not found">
+    </div>
+  </div>
+</div>

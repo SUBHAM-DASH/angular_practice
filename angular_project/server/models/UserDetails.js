@@ -2,29 +2,25 @@ const mongoose=require('mongoose');
 const {Schema}=mongoose;
 
 const UserDetails = new Schema({
-    email:{
-      type:String,
-      required:true
-    },
-    phone:{
-      type:String,
-      required:true
-    },
-    address:[
-      {
-        streetControl:{
-          type:String,
-          required:true
-        },
-        postalcodeControl:{
-          type:Number,
-          require:true
-        }
-      }
-    ],
-    tickets:{
-      type:Array,
-      default:[]
-    }
+  barcode:{
+    type:String,
+    required:true
+  },
+  album:{
+    type:String,
+    required:true
+  },
+  artist:{
+    type:String,
+    required:true
+  },
+  price:{
+    type:String,
+    required:true
+  },
+  date:{
+    type:String,
+    required:true
+  }
 });
 module.exports = mongoose.model("userdetails", UserDetails);

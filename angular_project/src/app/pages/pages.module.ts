@@ -35,7 +35,12 @@ import { FormvalidationComponent } from './components/formvalidation/formvalidat
 import { PiechatComponent } from './components/piechat/piechat.component';
 import { BarchatComponent } from './components/barchat/barchat.component';
 import { TryformComponent } from './components/tryform/tryform.component';
-
+import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
+import { ImageuploadComponent } from './components/imageupload/imageupload.component';
+import { TableComponent } from './components/table/table.component';
+import { FilterPipe } from './filter.pipe';
+import { FilterNamePipe } from './filter-name.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -62,9 +67,15 @@ import { TryformComponent } from './components/tryform/tryform.component';
     PiechatComponent,
     BarchatComponent,
     TryformComponent,
+    InlineeditComponent,
+    ImageuploadComponent,
+    TableComponent,
+    FilterPipe,
+    FilterNamePipe,
   ],
   imports: [
     CommonModule,
+    Ng2SearchPipeModule,
     PagesRoutingModule,
     MaterialUIModule,
     FormsModule,
@@ -72,7 +83,7 @@ import { TryformComponent } from './components/tryform/tryform.component';
     SharedModule,
     BsDatepickerModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ]
 })
 export class PagesModule { }

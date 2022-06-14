@@ -2,16 +2,29 @@ const mongoose=require('mongoose');
 const {Schema}=mongoose;
 
 const EmployeeDetails = new Schema({
-  image:{
+  firstname:{
     type:String,
     required:true
   },
-  name:{
+  lastname:{
     type:String,
     required:true
   },
-  trackList:{
-    type:Array
+  email:{
+    type:String,
+    required:true
+  },
+  password:{
+    type:String,
+    required:true
+  },
+  cpassword:{
+    type:String,
+    required:true
+  },
+  albumimage:{
+    type:String,
+    required:true
   }
 });
 module.exports = mongoose.model("employee", EmployeeDetails);

@@ -45,4 +45,18 @@ export class DataserviceService {
   ]
 
 
+
+  submitEmployeeDetails(data:any){
+    console.log("formData");
+    return this.http.post("http://localhost:9000/api/employeedetails",data)
+  }
+
+  getEmployeeDetails(){
+    return this.http.get("http://localhost:9000/api/getemployeedetals");
+  }
+
+  editEmployeeDetails(data:any){
+    return this.http.put("http://localhost:9000/api/editemployee",data);
+  }
+
 }

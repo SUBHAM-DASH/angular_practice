@@ -11,12 +11,14 @@ export class ParentComponent implements OnInit {
   constructor(private dt:DataserviceService) { }
 
   check:boolean=true;
-
+  data=[
+    {title:"title1",desc:"vala nuhe",iswishlist:false},
+    {title:"title2",desc:"vala kuade gala",iswishlist:false},
+    {title:"title3",desc:"vala hebani",iswishlist:false},
+    {title:"title4",desc:"vala kebe heba",iswishlist:false}
+  ]
   ngOnInit(): void {
-    this.dt.obj.subscribe((res)=>{
-      console.log(res);
 
-    })
   }
 
 

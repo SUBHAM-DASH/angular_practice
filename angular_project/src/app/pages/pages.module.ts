@@ -38,9 +38,11 @@ import { TryformComponent } from './components/tryform/tryform.component';
 import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
 import { ImageuploadComponent } from './components/imageupload/imageupload.component';
 import { TableComponent } from './components/table/table.component';
-import { FilterPipe } from './filter.pipe';
+// import { FilterPipe } from './filter.pipe';
 import { FilterNamePipe } from './filter-name.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 
 @NgModule({
   declarations: [
@@ -70,8 +72,10 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     InlineeditComponent,
     ImageuploadComponent,
     TableComponent,
-    FilterPipe,
+    // FilterPipe,
     FilterNamePipe,
+    WishlistComponent,
+    ShowDetailsComponent,
   ],
   imports: [
     CommonModule,

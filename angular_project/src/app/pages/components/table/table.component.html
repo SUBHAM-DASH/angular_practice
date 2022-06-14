@@ -25,8 +25,9 @@
     </div>
   </div>
 
-  <div *ngFor="let item of dummyData  | filter:albumSearch | filter:barcodeSearch | filter:artistSearch | filter:priceSearch | filter:dateSearch">
-    <div class="row">
+  <div *ngFor="let item of dummyData | filter:albumSearch | filter:barcodeSearch | filter:artistSearch | filter:priceSearch | filter:dateSearch;let i=index ">
+    <div class="row" (click)="selectedData(item,i)">
+      <hr>
       <div class="col-md-2 my-2">
         <strong>{{ item.date }}</strong>
       </div>
@@ -43,9 +44,20 @@
         <strong>{{ item.price }}</strong>
       </div>
       <div class="col-md-2 my-2">
-        <button class="btn btn-success mx-1" style="width: 80px;">IsFeature</button>
-        <button class="btn btn-primary" style="width: 70px;">Details</button>
+        <button class="btn btn-success mx-1" (click)="isFeature(item,i)" style="width: 80px;">IsFeature</button>
+        <button class="btn btn-primary" (click)="getDetails(item,i)" style="width: 70px;">Details</button>
       </div>
+    </div>
+  </div>
+
+  <div *ngIf="!showData">
+    <h2 class="text-center">Selected Data</h2>
+    <div class="row">
+      <div class="col-md-2">{{data.date}}</div>
+      <div class="col-md-2">{{data.barcode}}</div>
+      <div class="col-md-2">{{data.album}}</div>
+      <div class="col-md-2">{{data.artist}}</div>
+      <div class="col-md-2">{{data.price}}</div>
     </div>
   </div>
 </div>

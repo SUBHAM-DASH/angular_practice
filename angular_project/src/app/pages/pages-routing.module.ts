@@ -23,6 +23,8 @@ import { PiechatComponent } from './components/piechat/piechat.component';
 import { BarchatComponent } from './components/barchat/barchat.component';
 import { TryformComponent } from './components/tryform/tryform.component';
 import { TableComponent } from './components/table/table.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -47,7 +49,8 @@ const routes: Routes = [
   { path: 'tryform', component: TryformComponent },
   { path: 'inlineedit', component: InlineeditComponent },
   { path: 'imageupload', component: ImageuploadComponent },
-  { path: 'table', component: TableComponent }
+  { path: 'table', component: TableComponent },
+  { path: 'showdetail', component: ShowDetailsComponent }
 ];
 
 @NgModule({

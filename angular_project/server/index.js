@@ -9,7 +9,7 @@ const uploadDocs = require("./middleware/upload");
 // middleware
 app.use(express.json());
 app.use(cors());
-
+app.use(express.static('uploads/employee_details'));
 //Application label middleware
 // app.use(
 //   uploadDocs.fields([

@@ -15,6 +15,8 @@ export class TableComponent implements OnInit {
   priceSearch:any;
   dateSearch:any
   dummyData:any=[]
+  showData = true;
+  data:any
   constructor(private _dataservice:DataserviceService) {}
 
   ngOnInit(): void {
@@ -24,4 +26,19 @@ export class TableComponent implements OnInit {
     })
   }
 
+  selectedData(data:any,id:any){
+    // console.log(data);
+    console.log(id);
+    this.showData = false;
+    this.data = data;
+  }
+
+  isFeature(data:any,id:any){
+    console.log(data);
+  }
+
+  getDetails(data:any,id:any){
+    console.log(data);
+    console.log(id);
+  }
 }

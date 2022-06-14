@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let item of array">
+      <div class="col-md-4">
+        <div class="card" style="width: 18rem">
+          <img
+            src="{{server}}/{{item.albumimage}}"
+            class="card-img-top"
+            alt="image not found"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ item.firstname }}</h5>
+            <h5 class="card-title">{{ item.lastname }}</h5>
+            <p class="card-text">
+              {{item.email}}
+            </p>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

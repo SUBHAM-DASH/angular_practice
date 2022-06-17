@@ -43,6 +43,8 @@ import { FilterNamePipe } from './filter-name.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
+import { ShowpageComponent } from './components/showpage/showpage.component';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +78,8 @@ import { ShowDetailsComponent } from './components/tryform/show-details/show-det
     FilterNamePipe,
     WishlistComponent,
     ShowDetailsComponent,
+    ShowpageComponent,
+    InputComponent,
   ],
   imports: [
     CommonModule,

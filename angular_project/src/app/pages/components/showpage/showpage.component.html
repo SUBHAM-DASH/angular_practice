@@ -1,0 +1,41 @@
+<div class="container">
+  <form [formGroup]="formGroup">
+    <label>Album</label>
+    <input type="text" formControlName="album" placeholder="Album name.." class="form-control">
+    <br>
+    <label>Artist</label>
+    <input type="text" formControlName="artist" placeholder="Artist name.." class="form-control">
+    <br>
+    <label>Price</label>
+    <input type="text" formControlName="price" placeholder="Price name.." class="form-control">
+    <br>
+    <label>Barcode</label>
+    <input type="text" formControlName="barcode" placeholder="Barcode.." class="form-control">
+    <br>
+    <label>Date</label>
+    <input type="text" formControlName="date" placeholder="Date name.." class="form-control">
+    <br>
+
+    <h2 class="text-center text-primary">Student Details</h2>
+
+    <table class="table table-primary">
+      <thead>
+        <tr>
+          <th scope="col">Sl.No</th>
+          <th scope="col">Name:</th>
+          <th scope="col">Roll:</th>
+          <th scope="col">Mobile:</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of data2;let i = index">
+        <tr>
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.name}}</td>
+          <td>{{item.roll}}</td>
+          <td>{{item.mobile}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </form>
+</div>

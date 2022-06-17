@@ -1,3 +1,4 @@
+import { InputComponent } from './components/input/input.component';
 import { ImageuploadComponent } from './components/imageupload/imageupload.component';
 import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
 import { FormvalidationComponent } from './components/formvalidation/formvalidation.component';
@@ -25,6 +26,7 @@ import { TryformComponent } from './components/tryform/tryform.component';
 import { TableComponent } from './components/table/table.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
+import { ShowpageComponent } from './components/showpage/showpage.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -50,7 +52,9 @@ const routes: Routes = [
   { path: 'inlineedit', component: InlineeditComponent },
   { path: 'imageupload', component: ImageuploadComponent },
   { path: 'table', component: TableComponent },
-  { path: 'showdetail', component: ShowDetailsComponent }
+  { path: 'showdetail', component: ShowDetailsComponent },
+  { path: 'showpage/:id', component: ShowpageComponent },
+  { path: 'input', component: InputComponent }
 ];
 
 @NgModule({

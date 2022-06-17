@@ -45,7 +45,6 @@ export class TryformComponent implements OnInit {
     formData.append('cpassword',this.formGroup.value['cpassword']);
     formData.append('albumimage',this.formGroup.value['albumimage']);
 
-
     this._dataService.submitEmployeeDetails(formData).subscribe((res:any)=>{
       console.log(res);
     })

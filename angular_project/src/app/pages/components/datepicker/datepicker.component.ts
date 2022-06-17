@@ -10,10 +10,10 @@ export class DatepickerComponent implements OnInit {
   constructor() {
   }
   ngOnInit(): void {
+
   }
   // onOpenCalendar(container:any) {
   //   console.log(container);
-
     // container.setViewMode('year');
     // container.yearSelectHandler = (event: CalendarCellViewModel): void => {
     // container.value =  event.date;

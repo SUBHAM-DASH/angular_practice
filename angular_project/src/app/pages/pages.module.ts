@@ -32,8 +32,6 @@ import { NgOnchangesComponent } from './components/ng-onchanges/ng-onchanges.com
 import { ParentNgOnChangesComponent } from './components/parent-ng-on-changes/parent-ng-on-changes.component';
 import { DailogComponent } from './components/dailog/dailog.component';
 import { FormvalidationComponent } from './components/formvalidation/formvalidation.component';
-import { PiechatComponent } from './components/piechat/piechat.component';
-import { BarchatComponent } from './components/barchat/barchat.component';
 import { TryformComponent } from './components/tryform/tryform.component';
 import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
 import { ImageuploadComponent } from './components/imageupload/imageupload.component';
@@ -68,8 +66,6 @@ import { InputComponent } from './components/input/input.component';
     ParentNgOnChangesComponent,
     DailogComponent,
     FormvalidationComponent,
-    PiechatComponent,
-    BarchatComponent,
     TryformComponent,
     InlineeditComponent,
     ImageuploadComponent,

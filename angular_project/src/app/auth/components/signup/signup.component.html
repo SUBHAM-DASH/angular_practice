@@ -21,11 +21,11 @@
     </div>
 
     <div class="d-flex justify-content-center">
-      <button type="submit" class="btn btn-block btn-outline-primary">{{loginMode?"Sign Up":"Login"}}</button>
+      <button type="submit" class="btn btn-block btn-outline-primary">{{!loginMode?"Sign Up":"Login"}}</button>
     </div>
     <p class="mb-2">
       {{loginMode?"Don't have account ?":"Already have account!"}}
-      <a class="text-" (click)="loginsignupMode()">{{loginMode?"create one":"sign in"}}</a></p>
+      <a class="text-" (click)="loginsignupMode()" style="cursor: pointer;">{{loginMode?"create one":"sign in"}}</a></p>
     <a href="#">forget passsword</a>
   </form>
 </div>

@@ -44,5 +44,4 @@ router.post('/getsearchdetail',async(req,res)=>{
   }
 })
 
-
 module.exports = router;

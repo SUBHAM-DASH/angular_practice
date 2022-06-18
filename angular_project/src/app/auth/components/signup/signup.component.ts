@@ -1,5 +1,6 @@
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -8,25 +9,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
-  formGroup!:FormGroup;
-  loginMode:boolean = false;
+  constructor(
+    private fb: FormBuilder,
+    private _auth: AuthService
+  ) { }
+  formGroup!: FormGroup;
+  loginMode: boolean = false;
   ngOnInit(): void {
     this.formGroup = this.fb.group({
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(4)]]
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(4)]]
     })
   }
 
-  onSubmit(){
-    if(this.formGroup.valid){
+  onSubmit() {
+    if (this.formGroup.valid) {
       console.log(this.formGroup.value);
-    }else{
+      this._auth.signUp(this.formGroup.value).subscribe((res:any)=>{
+        console.log(res);
+      })
+    } else {
 
     }
   }
 
-  loginsignupMode(){
+  loginsignupMode() {
     this.loginMode = !this.loginMode;
   }
 }

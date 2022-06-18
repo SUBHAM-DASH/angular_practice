@@ -20,8 +20,6 @@ import { StylebindingComponent } from './components/stylebinding/stylebinding.co
 import { SampleformComponent } from './components/sampleform/sampleform.component';
 import { FormarrayComponent } from './components/formarray/formarray.component';
 import { ParentComponent } from './components/parent/parent.component';
-import { PiechatComponent } from './components/piechat/piechat.component';
-import { BarchatComponent } from './components/barchat/barchat.component';
 import { TryformComponent } from './components/tryform/tryform.component';
 import { TableComponent } from './components/table/table.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
@@ -46,8 +44,6 @@ const routes: Routes = [
   { path: 'child2', component: Child2Component },
   { path: 'parentngchanges', component: ParentNgOnChangesComponent },
   { path: 'formvalidation', component: FormvalidationComponent },
-  { path: 'piechat', component: PiechatComponent },
-  { path: 'barchat', component: BarchatComponent },
   { path: 'tryform', component: TryformComponent },
   { path: 'inlineedit', component: InlineeditComponent },
   { path: 'imageupload', component: ImageuploadComponent },

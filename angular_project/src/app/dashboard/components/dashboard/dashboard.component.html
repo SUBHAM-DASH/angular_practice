@@ -1,0 +1,115 @@
+<div class="container my-2">
+  <h2 class="text-primary text-center">DASHBOARD</h2>
+  <div class="row">
+    <div class="col-md-2">
+      <input
+        type="text"
+        placeholder="YEAR"
+        class="form-control"
+        name="year"
+        [(ngModel)]="year"
+        bsDatepicker
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        [bsConfig]="{
+          minMode: 'year',
+          adaptivePosition: true,
+          dateInputFormat: 'YYYY'
+        }"
+      />
+    </div>
+    <div class="col-md-2">
+      <input
+        type="text"
+        placeholder="MONTH"
+        class="form-control"
+        name="month"
+        [(ngModel)]="month"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        bsDatepicker
+        [bsConfig]="{
+          minMode: 'month',
+          adaptivePosition: true,
+          dateInputFormat: 'MMMM YYYY'
+        }"
+      />
+    </div>
+    <div class="col-md-2">
+      <input
+        type="text"
+        placeholder="FROM"
+        class="form-control"
+        name="from"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        [(ngModel)]="from"
+        bsDatepicker
+      />
+    </div>
+    <div class="col-md-2">
+      <input
+        type="text"
+        placeholder="TO"
+        class="form-control"
+        name="to"
+        [minDate]="minDate"
+        [maxDate]="maxDate"
+        [(ngModel)]="to"
+        bsDatepicker
+      />
+    </div>
+    <div class="col-md-2">
+      <input
+        type="button"
+        value="SEARCH"
+        class="form-control"
+        (click)="getInputValue()"
+      />
+    </div>
+    <div class="col-md-2">
+      <input
+        type="button"
+        [value]="showToday ? 'TODAY' : currentDate.toLocaleString()"
+        (click)="showTodayDate()"
+        class="form-control"
+      />
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Feature</mat-card-title>
+        </mat-card-header>
+      </mat-card>
+    </div>
+    <div class="col-md-6">
+      <mat-card>
+        <div class="row">
+          <mat-card-header class="col-md-6">
+            <mat-card-title>Feature :20</mat-card-title>
+          </mat-card-header>
+          <mat-card-header class="col-md-6">
+            <mat-card-title>Unfeature :20</mat-card-title>
+          </mat-card-header>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<div class="container my-5">
+  <div class="row">
+    <div class="col-md-6 my-3">
+      <app-piechat></app-piechat>
+    </div>
+    <div class="col-md-6 my-3">
+      <app-barchart></app-barchart>
+    </div>
+    <div class="col-md-6 my-3">
+      <app-linechart></app-linechart>
+    </div>
+  </div>
+</div>

@@ -9,7 +9,7 @@ const uploadDocs = require("./middleware/upload");
 // middleware
 app.use(express.json());
 app.use(cors());
-app.use(express.static('uploads/employee_details'));
+app.use(express.static("uploads/employee_details"));
 //Application label middleware
 // app.use(
 //   uploadDocs.fields([
@@ -32,6 +32,12 @@ app.use("/api", require("./routes/userdetails"));
 app.use("/api", require("./routes/products.router"));
 app.use("/api", require("./routes/employee"));
 app.use("/api", require("./routes/candidate"));
+app.use("/api", require("./routes/vendorDetails"));
+app.use("/api", require("./routes/tokenDetails"));
+app.use("/api", require("./routes/orderDetails"));
+app.use("/api", require("./routes/gpsPush"));
+app.use("/api", require("./routes/dashboard"));
+app.use("/api", require("./routes/newuserDetail"));
 
 app.listen(port, () => {
   console.log(`server is running on ${port}`);

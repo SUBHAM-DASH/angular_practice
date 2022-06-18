@@ -6,6 +6,8 @@ import { SignupComponent } from './components/signup/signup.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialUIModule } from '../material-ui/material-ui.module';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     SignupComponent
@@ -16,7 +18,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MaterialUIModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ]
 })
 export class AuthModule { }

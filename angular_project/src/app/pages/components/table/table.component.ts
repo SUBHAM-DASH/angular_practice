@@ -5,40 +5,28 @@ import { DataserviceService } from '../../dataservice.service';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  styleUrls: ['./table.component.scss'],
 })
 export class TableComponent implements OnInit {
+  array = [
+    { id: 1, name: 'subham', gmail: 'dash@gmail.com', roll: 34, select: true },
+    {
+      id: 2,
+      name: 'kumar',
+      gmail: 'kumar@gmail.com',
+      roll: 45,
+      select: true,
+    },
+    { id: 3, name: 'dash', gmail: 'da1@gmail.com', roll: 43, select: false },
+    { id: 4, name: 'jitu', gmail: 'jitu23@.com', roll: 3, select: false },
+  ];
 
-  barcodeSearch:any;
-  albumSearch:any;
-  artistSearch:any;
-  priceSearch:any;
-  dateSearch:any
-  dummyData:any=[]
-  showData = true;
-  data:any
-  constructor(private _dataservice:DataserviceService) {}
-
-  ngOnInit(): void {
-    this._dataservice.getDetails().subscribe((res:any)=>{
-      console.log(res);
-      this.dummyData = res.result
-    })
-  }
-
-  selectedData(data:any,id:any){
-    // console.log(data);
-    console.log(id);
-    this.showData = false;
-    this.data = data;
-  }
-
-  isFeature(data:any,id:any){
-    console.log(data);
-  }
-
-  getDetails(data:any,id:any){
-    console.log(data);
-    console.log(id);
+  constructor(private _dataservice: DataserviceService) {}
+  check: any;
+  ngOnInit(): void {}
+  class = {};
+  onSelect(event:any, i: any) {
+    console.log(event.target.checked,i);
+    this.check = event.target.checked ? i : undefined;
   }
 }

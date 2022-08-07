@@ -1,0 +1,16 @@
+<div class="container">
+  <div *ngFor="let item of source;let i = index">
+    <hr>
+    <div>
+      <p>{{item.id}}</p>
+    </div>
+    <div>
+      <p>{{item.name}}</p>
+    </div>
+    <div>
+      <mat-slide-toggle [ngModel]="item.desable" (change)="slideToggleChange($event,item,i)">
+        Change me
+      </mat-slide-toggle>
+    </div>
+  </div>
+</div>

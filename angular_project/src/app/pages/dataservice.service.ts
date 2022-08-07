@@ -58,4 +58,8 @@ export class DataserviceService {
     return this.http.post('http://localhost:9000/api/resume', data);
   }
 
+  //json placeholder api
+  getAllusers(){
+    return this.http.get("https://jsonplaceholder.typicode.com/todoss");
+  }
 }

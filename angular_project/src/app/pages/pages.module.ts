@@ -42,6 +42,8 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 import { ShowpageComponent } from './components/showpage/showpage.component';
 import { InputComponent } from './components/input/input.component';
+import { Table2Component } from './components/table2/table2.component';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 
 @NgModule({
@@ -76,6 +78,8 @@ import { InputComponent } from './components/input/input.component';
     ShowDetailsComponent,
     ShowpageComponent,
     InputComponent,
+    Table2Component,
+    DialogComponent,
   ],
   imports: [
     CommonModule,

@@ -25,6 +25,7 @@ import { TableComponent } from './components/table/table.component';
 import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 import { ShowpageComponent } from './components/showpage/showpage.component';
+import { Table2Component } from './components/table2/table2.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -50,11 +51,12 @@ const routes: Routes = [
   { path: 'table', component: TableComponent },
   { path: 'showdetail', component: ShowDetailsComponent },
   { path: 'showpage/:id', component: ShowpageComponent },
-  { path: 'input', component: InputComponent }
+  { path: 'input', component: InputComponent },
+  { path: 'table2', component: Table2Component },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class PagesRoutingModule { }
+export class PagesRoutingModule {}

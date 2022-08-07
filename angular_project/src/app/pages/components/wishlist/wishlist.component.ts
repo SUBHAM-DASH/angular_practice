@@ -10,7 +10,7 @@ export class WishlistComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.field);
+
   }
   onClick(value:any){
     this.field.iswishlist = true;

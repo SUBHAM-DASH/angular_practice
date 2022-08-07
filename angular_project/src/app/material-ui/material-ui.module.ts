@@ -11,9 +11,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 // bootstrap
-
 
 const materialUImodule: any = [
   MatDatepickerModule,
@@ -23,24 +23,17 @@ const materialUImodule: any = [
   MatDialogModule,
   MatFormFieldModule,
   MatInputModule,
+  MatSlideToggleModule,
   MatCardModule,
   MatTooltipModule,
-  MatTabsModule
+  MatTabsModule,
 
   // bootstrap
-
-]
-
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    materialUImodule,
-
-  ],
-  exports: [
-    materialUImodule
-  ]
+  imports: [CommonModule, materialUImodule],
+  exports: [materialUImodule],
 })
-export class MaterialUIModule { }
+export class MaterialUIModule {}

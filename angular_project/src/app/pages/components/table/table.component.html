@@ -1,64 +1,22 @@
 <div class="container">
-  <div class="row">
-    <div class="col-md-2">
-      <h3><strong class="my-2">Date</strong></h3>
-      <input type="text" placeholder="search Date ..." name="dateSearch" [(ngModel)]="dateSearch" class="form-control my-2" />
-    </div>
-    <div class="col-md-2">
-      <h3><strong class="my-2">Barcode</strong></h3>
-      <input type="text" placeholder="search barcode ..." name="barcodeSearch" [(ngModel)]="barcodeSearch" class="form-control my-2" />
-    </div>
-    <div class="col-md-2">
-      <h3><strong class="my-2">Album</strong></h3>
-      <input type="text" placeholder="search album ..." name="albumSearch" [(ngModel)]="albumSearch" class="form-control my-2" />
-    </div>
-    <div class="col-md-2">
-      <h3><strong  class="my-2">Artist</strong></h3>
-      <input type="text" placeholder="search artist ..." name="artistSearch" [(ngModel)]="artistSearch" class="form-control my-2" />
-    </div>
-    <div class="col-md-2">
-      <h3><strong class="my-2">Price</strong></h3>
-      <input type="text" placeholder="search price ..." name="price" [(ngModel)]="priceSearch" class="form-control my-2" />
-    </div>
-    <div class="col-md-2">
-      <h3><strong  class="my-2">Action</strong></h3>
-    </div>
-  </div>
-
-  <div *ngFor="let item of dummyData | filter:albumSearch | filter:barcodeSearch | filter:artistSearch | filter:priceSearch | filter:dateSearch;let i=index ">
-    <div class="row" (click)="selectedData(item,i)">
-      <hr>
-      <div class="col-md-2 my-2">
-        <strong>{{ item.date }}</strong>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>email</th>
+      <th>roll</th>
+      <th>gender</th>
+    </tr>
+    <tr *ngFor="let item of array;let i = index">
+      <td>{{ item.id }}</td>
+      <td>{{ item.name }}</td>
+      <td>{{ item.gmail }}</td>
+      <td>{{ item.roll }}</td>
+      <td>{{ item.select }}</td>
+      <div class="form-check form-switch">
+        <input class="form-check-input" [ngModel]="check === i" (change)="onSelect($event,i)"  type="checkbox" id="check" />
+        <label class="form-check-label" for="check">check</label>
       </div>
-      <div class="col-md-2 my-2">
-        <strong>{{ item.barcode }}</strong>
-      </div>
-      <div class="col-md-2 my-2">
-        <strong>{{ item.album }}</strong>
-      </div>
-      <div class="col-md-2 my-2">
-        <strong>{{ item.artist }}</strong>
-      </div>
-      <div class="col-md-2 my-2">
-        <strong>{{ item.price }}</strong>
-      </div>
-      <div class="col-md-2 my-2">
-        <button class="btn btn-success mx-1" (click)="isFeature(item,i)" style="width: 80px;">IsFeature</button>
-        <button class="btn btn-primary" [routerLink]="['/showpage',item._id]" style="width: 70px;">Details</button>
-      </div>
-    </div>
-  </div>
-
-  <div *ngIf="!showData">
-    <h2 class="text-center">Selected Data</h2>
-    <div class="row">
-      <div class="col-md-2">{{data.date}}</div>
-      <div class="col-md-2">{{data.barcode}}</div>
-      <div class="col-md-2">{{data.album}}</div>
-      <div class="col-md-2">{{data.artist}}</div>
-      <div class="col-md-2">{{data.price}}</div>
-    </div>
-  </div>
+    </tr>
+  </table>
 </div>
-

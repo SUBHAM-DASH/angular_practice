@@ -3,11 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DataserviceService {
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
   url = 'http://localhost:4000/api/products/searchProduct?name=';
   url2 = 'http://localhost:4000/api/newuserdetails';
   url3 = 'http://localhost:9000/api/getDetails';
@@ -15,23 +14,21 @@ export class DataserviceService {
   saveUserInfo(data: any) {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Accept': 'text/html',
-        'Content-Type': 'application/json; charset=utf-8'
+        Accept: 'text/html',
+        'Content-Type': 'application/json; charset=utf-8',
       }),
-      responseType: 'text' as 'json'
+      responseType: 'text' as 'json',
     };
     return this.http.post(this.url2, data);
   }
 
-
-  getDetails(){
+  getDetails() {
     return this.http.get(this.url3);
   }
 
-
   getSearchdata(data: any) {
     // return this.http.post(this.url + `${data}`);
-    return this.http.post("http://localhost:9000/api/getsearchdetail",data)
+    return this.http.post('http://localhost:9000/api/getsearchdetail', data);
   }
 
   getData() {
@@ -39,24 +36,26 @@ export class DataserviceService {
   }
   obj = new Subject();
   data = [
-    { name: "subham", mobile: 797890504202 },
-    { name: "kumar", mobile: 79883838333 },
-    { name: "raja", mobile: 72863737383 }
-  ]
+    { name: 'subham', mobile: 797890504202 },
+    { name: 'kumar', mobile: 79883838333 },
+    { name: 'raja', mobile: 72863737383 },
+  ];
 
-
-
-  submitEmployeeDetails(data:any){
-    console.log("formData");
-    return this.http.post("http://localhost:9000/api/employeedetails",data)
+  submitEmployeeDetails(data: any) {
+    console.log('formData');
+    return this.http.post('http://localhost:9000/api/employeedetails', data);
   }
 
-  getEmployeeDetails(){
-    return this.http.get("http://localhost:9000/api/getemployeedetals");
+  getEmployeeDetails() {
+    return this.http.get('http://localhost:9000/api/getemployeedetals');
   }
 
-  editEmployeeDetails(data:any){
-    return this.http.put("http://localhost:9000/api/editemployee",data);
+  editEmployeeDetails(data: any) {
+    return this.http.put('http://localhost:9000/api/editemployee', data);
+  }
+
+  imageUpload(data: any) {
+    return this.http.post('http://localhost:9000/api/resume', data);
   }
 
 }

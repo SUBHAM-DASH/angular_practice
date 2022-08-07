@@ -3,12 +3,14 @@ const router = express.Router();
 const Candidate = require('../models/Candidate');
 const upload = require('../middleware/upload');
 
-
+// upload.fields([{name:"pimage",maxCount:1}])
 
 //candidate save detail
-router.post('/resume',upload.fields([{name:"pimage",maxCount:1}]),async(req,res)=>{
+router.post('/resume',upload.none(),async(req,res)=>{
   console.log(req.body);
   console.log(req.files);
+  let imageData = new Buffer.from(req.body.image[2],"base64").toString("ascii");
+  console.log(imageData);
   // try {
     // const {name,email,dob,state,gender,location}= req.body;
     // const pImage=req.files['pimage'][0].filename;

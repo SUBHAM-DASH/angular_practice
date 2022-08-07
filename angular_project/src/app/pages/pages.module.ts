@@ -16,7 +16,6 @@ import { CardComponent } from './components/card/card.component';
 import { InputDecoratorComponent } from './components/input-decorator/input-decorator.component';
 // import {MultiDatepickerModule} from './multidatepicker/multidatepicker.module';
 
-
 // bootstrap
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { DatepickerComponent } from './components/datepicker/datepicker.component';
@@ -43,6 +42,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 import { ShowpageComponent } from './components/showpage/showpage.component';
 import { InputComponent } from './components/input/input.component';
+
 
 @NgModule({
   declarations: [
@@ -88,6 +88,7 @@ import { InputComponent } from './components/input/input.component';
     BsDatepickerModule,
     HttpClientModule,
     NgxPaginationModule,
+
   ]
 })
 export class PagesModule { }

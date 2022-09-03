@@ -1,5 +1,6 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 import { NgxPaginationModule } from 'ngx-pagination';
 import { HttpClientModule } from '@angular/common/http';
@@ -44,7 +45,22 @@ import { ShowpageComponent } from './components/showpage/showpage.component';
 import { InputComponent } from './components/input/input.component';
 import { Table2Component } from './components/table2/table2.component';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { EditorComponent } from './components/editor/editor.component';
+import { ImageCroperComponent } from './components/image-croper/image-croper.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { SocialLoginComponent } from './components/social-login/social-login.component';
 
+import {
+  SocialLoginModule,
+  SocialAuthServiceConfig,
+} from 'angularx-social-login';
+import { GoogleLoginProvider } from 'angularx-social-login';
+
+const googleLoginOptions = {
+  scope: 'dashsubham095@gmail.com',
+  plugin_name: 'sample_login', //can be any name
+};
 
 @NgModule({
   declarations: [
@@ -80,6 +96,10 @@ import { DialogComponent } from './components/dialog/dialog.component';
     InputComponent,
     Table2Component,
     DialogComponent,
+    EditorComponent,
+    ImageCroperComponent,
+    GoogleMapComponent,
+    SocialLoginComponent,
   ],
   imports: [
     CommonModule,
@@ -88,11 +108,31 @@ import { DialogComponent } from './components/dialog/dialog.component';
     MaterialUIModule,
     FormsModule,
     ReactiveFormsModule,
+    CKEditorModule,
     SharedModule,
     BsDatepickerModule,
     HttpClientModule,
     NgxPaginationModule,
-
-  ]
+    ImageCropperModule,
+    SocialLoginModule,
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '1094224468295-4bh0ng7vq6uh40knnqgfgn7ed0m96lds.apps.googleusercontent.com',
+              googleLoginOptions
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    },
+  ],
 })
-export class PagesModule { }
+export class PagesModule {}

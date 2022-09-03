@@ -1,3 +1,4 @@
+import { SocialLoginComponent } from './components/social-login/social-login.component';
 import { InputComponent } from './components/input/input.component';
 import { ImageuploadComponent } from './components/imageupload/imageupload.component';
 import { InlineeditComponent } from './components/inlineedit/inlineedit.component';
@@ -26,6 +27,9 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { ShowDetailsComponent } from './components/tryform/show-details/show-details.component';
 import { ShowpageComponent } from './components/showpage/showpage.component';
 import { Table2Component } from './components/table2/table2.component';
+import { EditorComponent } from './components/editor/editor.component';
+import { ImageCroperComponent } from './components/image-croper/image-croper.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
 
 const routes: Routes = [
   { path: 'ng-switch', component: NgSwitchComponent },
@@ -53,6 +57,10 @@ const routes: Routes = [
   { path: 'showpage/:id', component: ShowpageComponent },
   { path: 'input', component: InputComponent },
   { path: 'table2', component: Table2Component },
+  { path: 'editor', component: EditorComponent },
+  { path: 'image-croper', component: ImageCroperComponent },
+  { path: 'google-map', component: GoogleMapComponent },
+  { path: 'social-login', component: SocialLoginComponent },
 ];
 
 @NgModule({

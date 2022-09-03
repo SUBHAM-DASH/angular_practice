@@ -1,6 +1,20 @@
 <div class="container">
-  <div class="box" [ngClass]="myClass">
-    <p>Subham</p>
-  </div>
-  <button class="btn btn-outline-success my-3" (click)="changeClass()">click</button>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="row" *ngFor="let item of field">
+      <div class="col-md-6 my-2" *ngIf="item.type == 'text'">
+        <input [type]="item.type" [formControlName]="item.formControlName" [placeholder]="item.placeholder"
+          class="form-control">
+      </div>
+      <div class="col-md-6 my-2" *ngIf="item.type == 'select' && item.name == 'course'">
+        <select [formControlName]="item.formControlName">
+          <ng-container *ngFor="let pr of courses">
+            <option [value]="pr.id">{{pr.name}}</option>
+          </ng-container>
+        </select>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary" type="submit">click</button>
+    </div>
+  </form>
 </div>

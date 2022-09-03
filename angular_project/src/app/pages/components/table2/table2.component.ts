@@ -24,11 +24,7 @@ export class Table2Component implements OnInit {
 
   slideToggleChange(event: any, obj: any,index:any) {
     console.log(event);
-    console.log("check 1");
-
-
     event.source.checked = obj.desable; // Force slide toggle with our value
-    console.log("check 2");
     console.log(this.source);
 
     // Open confirmation dialog

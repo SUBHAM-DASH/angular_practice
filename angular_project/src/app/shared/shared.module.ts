@@ -6,6 +6,7 @@ import { CustomCardComponent } from './components/custom-card/custom-card.compon
 import { MaterialUIModule } from '../material-ui/material-ui.module';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 const sharedComponent=[
   CustomButtonComponent,
@@ -18,6 +19,7 @@ const sharedComponent=[
     CustomButtonComponent,
     CustomInputComponent,
     CustomCardComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,
@@ -26,7 +28,8 @@ const sharedComponent=[
     ReactiveFormsModule
   ],
   exports:[
-    sharedComponent
+    sharedComponent,
+    NavbarComponent
   ]
 })
 export class SharedModule { }

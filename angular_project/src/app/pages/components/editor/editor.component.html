@@ -1,0 +1,8 @@
+<form (ngSubmit)="getData()">
+  <div class="container" style="height:50%;">
+    <ckeditor [editor]="Editor" name="editorData"  (change)="onChange($event)"
+    ></ckeditor>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<h3>{{editorData}}</h3>
